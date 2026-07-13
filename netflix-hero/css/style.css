@@ -1,7 +1,3 @@
-/* ==========================================================================
-   1. CSS Variables
-   ========================================================================== */
-
 :root {
     --color-black: #000000;
     --color-white: #ffffff;
@@ -14,9 +10,7 @@
     --transition-fast: 0.2s ease;
 }
 
-/* ==========================================================================
-   2. Reset and Base Styles
-   ========================================================================== */
+
 
 * {
     margin: 0;
@@ -32,32 +26,41 @@ body {
 
 img {
     max-width: 100%;
-    display: block;
+    display:block;
 }
 
 button {
     font-family: inherit;
     cursor: pointer;
     border: none;
+    
 }
 
-/* ==========================================================================
-   3. Navigation
-   ========================================================================== */
+.visually-hidden {
+    /* position: absolute; */
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 
 .site-header {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top:0;
+    left:0;
+    width:100%;
     z-index: 10;
 }
 
 .navbar {
-    display: flex;
+    display:flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 60px;
+    padding: 24px 60px
 }
 
 .nav-logo {
@@ -75,12 +78,8 @@ button {
     transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 
-/* ==========================================================================
-   4. Hero Section
-   ========================================================================== */
-
 .hero-section {
-    position: relative;
+    /* position: relative; */
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -99,6 +98,8 @@ button {
     z-index: 1;
 }
 
+
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -110,7 +111,7 @@ button {
 }
 
 .hero-content {
-    position: relative;
+    /* position: relative; */
     z-index: 3;
     max-width: 640px;
     width: 100%;
@@ -130,17 +131,12 @@ button {
     font-weight: 400;
     margin-bottom: 16px;
 }
-
 .hero-description {
     font-size: 17px;
     font-weight: 400;
     line-height: 1.4;
     margin-bottom: 24px;
 }
-
-/* ==========================================================================
-   5. Form (Email + Button)
-   ========================================================================== */
 
 .hero-form {
     display: flex;
@@ -166,6 +162,7 @@ button {
     color: var(--color-text-muted);
 }
 
+
 .btn-get-started {
     display: flex;
     align-items: center;
@@ -188,13 +185,6 @@ button {
     transition: transform var(--transition-fast);
 }
 
-/* ==========================================================================
-   6. Hover Effects
-   ========================================================================== */
-
-.nav-logo:hover {
-    opacity: 0.85;
-}
 
 .btn-signin:hover {
     background-color: var(--color-red-hover);
@@ -206,23 +196,10 @@ button {
     transform: scale(1.03);
 }
 
-.btn-get-started:hover .btn-arrow {
-    transform: translateX(3px);
-}
 
 .email-input:hover {
     border-color: var(--color-white);
 }
-
-.email-input:focus {
-    outline: none;
-    border-color: var(--color-white);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
-}
-
-/* ==========================================================================
-   7. Tablet Media Query
-   ========================================================================== */
 
 @media (max-width: 900px) {
     .navbar {
@@ -245,10 +222,6 @@ button {
         font-size: 16px;
     }
 }
-
-/* ==========================================================================
-   8. Mobile Media Query
-   ========================================================================== */
 
 @media (max-width: 500px) {
     .navbar {
@@ -282,10 +255,14 @@ button {
     }
 
     .email-input {
+        flex-basis: auto;
         max-width: 100%;
     }
 
     .btn-get-started {
+        align-self: center;
+        width: auto;
         padding: 14px 0;
     }
 }
+
